@@ -3,7 +3,7 @@
 /**
  * main - The beginning phase
  *
- * return: - the ending phase with 0
+ * Return: - the ending phase with 0
  */
 
 int main(void)
