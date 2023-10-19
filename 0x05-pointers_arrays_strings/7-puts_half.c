@@ -20,15 +20,19 @@ void puts_half(char *str)
 	if (length_of_the_string % 2 != 0)
 	{
 		n = (length_of_the_string - 1) / 2;
+		for (x = n + 1; str[x] != '\0'; x++)
+		{
+			_putchar(str[x]);
+		}
 	}
 	else
 	{
 		n = length_of_the_string / 2;
-	}
 
-	for (x = n; str[x] != '\0'; x++)
-	{
-		_putchar(str[x]);
+		for (x = n; str[x] != '\0'; x++)
+		{
+			_putchar(str[x]);
+		}
 	}
 	_putchar('\n');
 }
