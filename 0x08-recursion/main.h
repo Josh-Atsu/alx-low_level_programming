@@ -14,5 +14,6 @@ int is_aprime(int x, int y);
 int is_palindrome(char *s);
 int _strlength(char *a);
 int _strcompare(char *b, int first, int last);
+int wildcmp(char *s1, char *s2);
 
 #endif
