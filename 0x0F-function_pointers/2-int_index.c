@@ -22,16 +22,17 @@ int int_index(int *array, int size, int (*cmp)(int))
 	{
 		for (j = i + 1; j < size; j++)
 		{
-			if (array[i] == array[j])
-			{
-				cmp(array[i]);
-				if (cmp(array[i]) == 1)
-					return (i);
-			}
+			/* ar1 = array[i], ar2 = array[j]; */
+			cmp(array[i]);
+			if (cmp(array[i]) == 1)
+				return (i);
 			check += 1;
 		}
 	}
+	cmp(array[i + 1]);
+	if (cmp(array[i + 1]) == 1)
+		return (i + 1);
 	if (check == 0)
 		return (-1);
-	return (0);
+	return (-1);
 }
