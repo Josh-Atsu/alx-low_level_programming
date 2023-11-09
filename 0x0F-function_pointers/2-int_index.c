@@ -29,9 +29,9 @@ int int_index(int *array, int size, int (*cmp)(int))
 			check += 1;
 		}
 	}
-	cmp(array[i + 1]);
-	if (cmp(array[i + 1]) == 1)
-		return (i + 1);
+	cmp(array[i - 1]);
+	if (cmp(array[i - 1]) == 1)
+		return (i - 1);
 	if (check == 0)
 		return (-1);
 	return (-1);
