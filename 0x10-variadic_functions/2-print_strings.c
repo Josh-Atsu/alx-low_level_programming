@@ -13,10 +13,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_list all_str;
 	char *str_h; /* pointer to hold the first string */
 
-	if (separator == NULL)
-		return;
-	if (n == 0)
-		return;
 	va_start(all_str, n);
 	for (i = 0; i < n; i++)
 	{
@@ -25,7 +21,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			printf("%s", str_h);
 		else
 			printf("nil");
-		if (i < n - 1)
+		if (i < n - 1 && separator != NULL)
 			printf("%s", separator);
 	}
 	printf("\n");
