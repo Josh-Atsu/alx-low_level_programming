@@ -11,5 +11,8 @@ int _sqrt_recursion(int n);
 int sqrt_func(int x, int n);
 int is_prime_number(int n);
 int is_actual_prime(int n, int x);
+int is_palindrome(char *s);
+int _strlen(char *s);
+int my_palindrome(char *s, int x, int j);
 
 #endif /* main.h */
