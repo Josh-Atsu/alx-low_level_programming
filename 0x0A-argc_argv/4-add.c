@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 		for (i = 1; i < argc; i++)
 		{
 			n = atoi(argv[i]);
-			 printf("%d\n", n); 
+			/*printf("%d\n", n);*/
 			if ((isdigit(n)))
 			{
 				printf("Error\n");
