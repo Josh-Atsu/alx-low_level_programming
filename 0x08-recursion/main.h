@@ -14,5 +14,6 @@ int is_actual_prime(int n, int x);
 int is_palindrome(char *s);
 int _strlen(char *s);
 int my_palindrome(char *s, int x, int j);
+int wildcmp(char *s1, char *s2);
 
 #endif /* main.h */
