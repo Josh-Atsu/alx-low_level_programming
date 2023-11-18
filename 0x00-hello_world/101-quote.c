@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <unistd.h>
 
 /**
  * main - entry point
@@ -7,11 +7,6 @@
  */
 int main(void)
 {
-	int i;
-	char *s = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
-	
-	for (i = 0; s[i] != '\0'; i++)
-		putchar(s[i]);
-	putchar('\n');
-	return (0);
+	write(2, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", 59);
+	return (1);
 }
