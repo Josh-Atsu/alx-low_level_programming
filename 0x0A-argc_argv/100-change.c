@@ -39,6 +39,11 @@ int main(int argc, char *argv[])
 			count += 1;
 			n = n - 5;
 		}
+		else if (n >= 2)
+		{
+			count += 1;
+			n = n - 2;
+		}
 		else if (n >= 1)
 		{
 			count += 1;
