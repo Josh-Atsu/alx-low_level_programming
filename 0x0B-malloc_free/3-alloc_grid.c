@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
+
 /**
  * alloc_grid - allocates memory of a 2 - dimentional array of space
  * and initializes it with zero
@@ -17,31 +17,21 @@ int **alloc_grid(int width, int height)
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
+	m = (int **)malloc(sizeof(int) * height);
+	if (m == NULL)
+	{
+		free(m);
+		return (NULL);
+	}
 	for (i = 0; i < height; i++)
 	{
-		m = malloc(sizeof(int));
-		if (m == NULL)
+		m[i] = (int *)malloc(sizeof(int) * width);
+		if (m[i] == NULL)
 		{
-			while (i >= 0)
-			{
-				free(m);
-				return (NULL);
-			}
-		}
-		for (j = 0; j < width; j++)
-		{
-			m[j] = malloc(sizeof(int));
-			if (m[j] == NULL)
-			{
-				while (i >= 0)
-				{
-					free(m[j]);
-				
-					j--;
-				}
-				free(m);
-				return (NULL);
-			}
+			for (; i >= 0; i--)
+				free(m[i]);
+			free(m);
+			return (NULL);
 		}
 	}
 	for (i = 0; i < height; i++)
