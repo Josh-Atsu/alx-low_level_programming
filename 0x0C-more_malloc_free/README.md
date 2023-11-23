@@ -1,2 +1,0 @@
-MORE OF MALLOC, FREE, AUTOMATIC AND DYNAMIC MEMORY ALLOCATION
-Malloc always returns a pointer
