@@ -9,10 +9,10 @@
  */
 char **strtow(char *str)
 {
-	int i, j, count = 0, strlen = 0;
+	int i, j, k, count = 0, strlen = 0;
 	char **m;
 
-	if (str == NULL || *str == '')
+	if (str == NULL || *str == '\0')
 		return (NULL);
 	i = 0;
 	while (str[i])
@@ -24,7 +24,7 @@ char **strtow(char *str)
 		}
 		i++;
 	}
-	m = malloc(count * sizeof(char *));
+	m = malloc((count + 1) * sizeof(char *));
 	if (m == NULL)
 	{
 		free(m);
@@ -51,9 +51,11 @@ char **strtow(char *str)
 		}
 		i++;
 	}
-	i = 0, count = 0;
-	while (str[i])
+	i = 0, k = 0;
+	while (i < count)
 	{
+		if (str[i] == ' ')
+			y
 		for (; str[i] != ' '; i++)
 		{
 			j = 0;
