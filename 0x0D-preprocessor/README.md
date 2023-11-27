@@ -7,3 +7,6 @@ They are macros whose call looks like function.
 
 we define macros using the "#define"
 b
+d
+02-main.c
+3-main.c
