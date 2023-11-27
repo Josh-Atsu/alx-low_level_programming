@@ -6,3 +6,4 @@ Function-like Macros
 They are macros whose call looks like function. 
 
 we define macros using the "#define"
+b
