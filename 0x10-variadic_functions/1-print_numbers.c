@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  * print_numbers - print all numbers
- * @separator, separates each numner
+ * @separator: separates each numner
  * @n: number of arguments
  * Return: void
  */
