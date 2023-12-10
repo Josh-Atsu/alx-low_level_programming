@@ -8,11 +8,24 @@
 
 int main(void)
 {
-	int x;
+	int x, y;
 
-	for (x = 0; x <= 99; x++)
+	for (x = 0; x <= 9; x++)
 	{
-		putchar(x + '0');
-		for (x < 10)
+		for (y = 0; y <= 9; y++)
 		{
-			putchar(
+			if (y > x)
+			{
+				putchar(x + '0');
+				putchar(y + '0');
+				if (x < 8 || y < 9)
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
+		}
+	}
+	putchar('\n');
+	return (0);
+}
