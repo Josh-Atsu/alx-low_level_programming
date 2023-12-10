@@ -8,6 +8,18 @@
 
 int main(void)
 {
-	int vex;
+	int i, num;
 
-	for 
+	for (i = 1; i < 16; i++)
+	{
+		if (i < 10)
+			putchar(i + '0');
+		else
+		{
+			num = i + 87;
+			putchar(num);
+		}
+	}
+	putchar('\n');
+	return (0);
+}
