@@ -16,7 +16,7 @@ int main(void)
 			{
 				for (j = 0; j < 10; j++)
 				{
-					if ((i + j) > (n + m))
+					if (((i + j) > (n + m)) && ((j > m) || (i > n)))
 					{
 						putchar(n + '0');
 						putchar(m + '0');
