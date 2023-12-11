@@ -23,7 +23,7 @@ int main(void)
 						putchar(' ');
 						putchar(i + '0');
 						putchar(j + '0');
-						if ((m < 8 || j < 9) || (i < 9 || n < 9))
+						if ((i < 9 || j < 9) || (n < 9 || m < 8))
 						{
 							putchar(',');
 							putchar(' ');
