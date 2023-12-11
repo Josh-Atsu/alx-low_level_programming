@@ -18,16 +18,16 @@ int main(void)
 				{
 					if (n < i || (n == i && j > m))
 					{
-						putchar(n + '0');
-						putchar(m + '0');
+					putchar(n + '0');
+					putchar(m + '0');
+					putchar(' ');
+					putchar(i + '0');
+					putchar(j + '0');
+					if ((i < 9 || j < 9) || (n < 9 || m < 8))
+					{
+						putchar(',');
 						putchar(' ');
-						putchar(i + '0');
-						putchar(j + '0');
-						if ((i < 9 || j < 9) || (n < 9 || m < 8))
-						{
-							putchar(',');
-							putchar(' ');
-						}
+					}
 					}
 				}
 			}
