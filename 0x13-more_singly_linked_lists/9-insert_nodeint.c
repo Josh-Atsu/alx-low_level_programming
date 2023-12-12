@@ -1,10 +1,10 @@
 #include "lists.h"
 /**
- * insert_nodeint_at_index - insert new node
- * at perticular index of listint
+ * insert_nodeint_at_index - insert new node at perticular index of listint
  * @head: double pointer to the first node
  * @idx: index to position the new node
  * @n: the data to put along
+ * Return: pointer to the new node
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
@@ -20,7 +20,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		node_ptr = node_ptr->next;
 	}
 	node_ptr = *head; /* reassign head to node_ptr */
-	if (idx > c_node || node_ptr->next == NULL)
+	if (idx > c_node)
 		return (NULL);
 	temp = malloc(sizeof(listint_t));
 	if (temp == NULL)
