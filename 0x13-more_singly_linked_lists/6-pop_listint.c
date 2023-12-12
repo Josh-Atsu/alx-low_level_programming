@@ -13,6 +13,8 @@ int pop_listint(listint_t **head)
 
 	if (head == NULL)
 		return (num);
+	if (*head == NULL)
+		return (num);
 	ptr_node = *head;
 	if (ptr_node->next != NULL)
 	{
