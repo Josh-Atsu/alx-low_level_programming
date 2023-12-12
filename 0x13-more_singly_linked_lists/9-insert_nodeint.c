@@ -20,7 +20,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		node_ptr = node_ptr->next;
 	}
 	node_ptr = *head; /* reassign head to node_ptr */
-	if (idx > c_node)
+	if (idx > c_node + 1)
 		return (NULL);
 	temp = malloc(sizeof(listint_t));
 	if (temp == NULL)
