@@ -11,7 +11,7 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *m;
-	size_t i, j, k = 0;
+	size_t i, j;
 
 	if (name == NULL || owner == NULL)
 		return (NULL);
@@ -42,11 +42,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (m->owner == NULL)
 	{
 		free(m->owner);
-		free(m->name);
 		free(m);
+		return (NULL);
 	}
 	for (i = 0; name[i]; i++)
-		m->name[k++] = name[i];
+		m->name[i] = name[i];
 	for (j = 0; owner[j]; j++)
 		m->owner[j] = owner[j];
 	return (m);
