@@ -1,6 +1,6 @@
 #include "main.h"
 
-/*
+/**
  * print_binary - Convert all integers to binary
  * @n: the unsigned long integer
  * Return: the number
@@ -15,7 +15,11 @@ void print_binary(unsigned long int n)
 		print_actual_binary(n);
 	}
 }
-
+/**
+ * print_actual_binary - convert numbers to binary representation
+ * @n: the decimal number
+ * Return: void
+ */
 void print_actual_binary(unsigned long int n)
 {
 	if (n == 0)
