@@ -3,7 +3,7 @@
 /**
  * add_dnodeint_end - add node at the end of list
  * @head: double pointer to the list
- * n: data contained
+ * @n: data contained
  * Return: new node or NULL
  */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
