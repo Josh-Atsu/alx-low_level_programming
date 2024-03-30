@@ -5,6 +5,7 @@
  * @h: pointer to the double linked list
  * @idx: position to insert node
  * @n: data
+ * Return: address of new node
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
@@ -14,9 +15,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (h == NULL)
 		return (NULL);
 	if (*h == NULL)
-	{
 		return (add_dnodeint(h, n));
-	}
 	ptr = (*h);
 	while (ptr->next)
 	{
@@ -37,7 +36,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		new_node->next = ptr;
 		ptr->prev = new_node;
 		*h = new_node;
-		ptr = NULL;
 		return (new_node);
 	}
 	while (idx > 1)
