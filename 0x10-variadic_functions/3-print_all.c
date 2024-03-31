@@ -9,6 +9,8 @@ void print_all(const char * const format, ...)
 	va_list all_arg;
 	int i, count;
 
+	if (format == NULL)
+		return;
 	va_start(all_arg, format);
 	i = 0;
 	while (format[i] != '\0' && format != NULL)
@@ -36,7 +38,7 @@ void print_all(const char * const format, ...)
 			}
 			case 's':
 			{
-				printf("%s", va_arg(all_arg, char *));
+				print_string(va_arg(all_arg, char *));
 				count = 1;
 				break;
 			}
@@ -49,4 +51,16 @@ void print_all(const char * const format, ...)
 	}
 	printf("\n");
 	va_end(all_arg);
+}
+
+/**
+ * print_string - prints only strings
+ * @str: the string to print
+ * Return: nothing
+ */
+void print_string(char *str)
+{
+	if (str == NULL)
+		printf("(nil)");
+	printf("%s", str);
 }
