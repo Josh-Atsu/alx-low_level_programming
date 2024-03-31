@@ -57,8 +57,10 @@ void print_all(const char * const format, ...)
 int print_string(char *str)
 {
 	if (str == NULL)
+	{
 		printf("(nil)");
-	else
-		printf("%s", str);
+		return (1);
+	}
+	printf("%s", str);
 	return (1);
 }
