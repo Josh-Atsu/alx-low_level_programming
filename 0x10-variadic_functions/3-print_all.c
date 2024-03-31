@@ -7,42 +7,35 @@
 void print_all(const char * const format, ...)
 {
 	va_list all_arg;
-	int i, count;
+	int i = 0, count = 0;
 
-	if (format == NULL)
-		return;
 	va_start(all_arg, format);
-	i = 0;
 	while (format[i] != '\0' && format != NULL)
 	{
-		count = 0;
 		switch (format[i])
 		{
 			case 'c':
 			{
 				printf("%c", va_arg(all_arg, int));
-				count = 1;
 				break;
 			}
 			case 'i':
 			{
 				printf("%d", va_arg(all_arg, int));
-				count = 1;
 				break;
 			}
 			case 'f':
 			{
 				printf("%f", va_arg(all_arg, double));
-				count = 1;
 				break;
 			}
 			case 's':
 			{
 				print_string(va_arg(all_arg, char *));
-				count = 1;
 				break;
 			}
 			default:
+				count = 1;
 				break;
 		}
 		if (format[i + 1] != '\0' && count == 1)
