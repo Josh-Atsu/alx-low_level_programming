@@ -7,5 +7,6 @@ int sum_them_all(const int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
+void print_string(char *str);
 
 #endif /* variadic_functions.h*/
