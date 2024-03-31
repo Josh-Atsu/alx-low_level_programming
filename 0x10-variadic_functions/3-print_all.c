@@ -40,6 +40,8 @@ void print_all(const char * const format, ...)
 				count = 1;
 				break;
 			}
+			default:
+				break;
 		}
 		if (format[i + 1] != '\0' && count == 1)
 			printf(", ");
