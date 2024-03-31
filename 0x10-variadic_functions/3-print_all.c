@@ -9,6 +9,8 @@ void print_all(const char * const format, ...)
 	va_list all_arg;
 	int i = 0, count;
 
+	while (format == NULL)
+		return;
 	va_start(all_arg, format);
 	while (format[i] != '\0' && format != NULL)
 	{
@@ -38,8 +40,6 @@ void print_all(const char * const format, ...)
 				count = print_string(va_arg(all_arg, char *));
 				break;
 			}
-			default:
-				break;
 		}
 		if (format[i + 1] != '\0' && count == 1)
 			printf(", ");
@@ -58,6 +58,7 @@ int print_string(char *str)
 {
 	if (str == NULL)
 		printf("(nil)");
-	printf("%s", str);
+	else
+		printf("%s", str);
 	return (1);
 }
