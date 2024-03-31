@@ -7,35 +7,38 @@
 void print_all(const char * const format, ...)
 {
 	va_list all_arg;
-	int i = 0, count = 0;
+	int i = 0, count;
 
 	va_start(all_arg, format);
 	while (format[i] != '\0' && format != NULL)
 	{
+		count = 0;
 		switch (format[i])
 		{
 			case 'c':
 			{
 				printf("%c", va_arg(all_arg, int));
+				count = 1;
 				break;
 			}
 			case 'i':
 			{
 				printf("%d", va_arg(all_arg, int));
+				count = 1;
 				break;
 			}
 			case 'f':
 			{
 				printf("%f", va_arg(all_arg, double));
+				count = 1;
 				break;
 			}
 			case 's':
 			{
-				print_string(va_arg(all_arg, char *));
+				count = print_string(va_arg(all_arg, char *));
 				break;
 			}
 			default:
-				count = 1;
 				break;
 		}
 		if (format[i + 1] != '\0' && count == 1)
@@ -51,9 +54,10 @@ void print_all(const char * const format, ...)
  * @str: the string to print
  * Return: nothing
  */
-void print_string(char *str)
+int print_string(char *str)
 {
 	if (str == NULL)
 		printf("(nil)");
 	printf("%s", str);
+	return (1);
 }
