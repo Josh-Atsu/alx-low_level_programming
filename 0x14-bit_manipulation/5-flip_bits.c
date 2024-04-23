@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * flip_bit - a function that counts the number of bits
+ * flip_bits - a function that counts the number of bits
  * you would need to flip to get from one number to another
  *
  * @n: first  number to compare
