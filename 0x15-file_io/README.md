@@ -10,3 +10,16 @@ Integer value	Name		<unistd.h> symbolic constant[1]		<stdio.h> file stream[2]
 0		Standard input	STDIN_FILENO				stdin
 1		Standard output	STDOUT_FILENO				stdout
 2		Standard error	STDERR_FILENO				stderr
+
+
+fopen - open a file
+fclose - close a file
+getc - read a character from a file
+puts - writes a cha into a file
+getw -  read or gets an integer
+putw - wrire  an integer 
+fprintf - print formated text into a file
+fscanf - reads formated from a file
+fgets - reads strings of chr from a file 
+fputs - writes strings of char
+feof - detect a file marker in a single file
