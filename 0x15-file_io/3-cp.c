@@ -26,8 +26,8 @@ void copy_file(const char *file_from, const char *file_to)
 	}
 	buffer = malloc(sizeof(char) * (1024 * 2));
 	if (buffer == NULL)
-		exit(1);
-	nchar = read(fd_from, buffer, 1024);
+		exit(98);
+	nchar = read(fd_from, buffer, 2048);
 	close(fd_from);
 	copy_file_to(file_to, buffer, nchar);
 	free(buffer);
