@@ -24,11 +24,11 @@ void copy_file(const char *file_from, const char *file_to)
 		fprintf(stderr, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
-	buffer = malloc(sizeof(char) * (1024 * 2));
+	buffer = malloc(sizeof(char) * (1024 * 3));
 	if (buffer == NULL)
 		exit(98);
 	nchar = read(fd_from, buffer, 2048);
-	if (fd_from == -1)
+	if (nchar == -1)
 	{
 		fprintf(stderr, "Error: Can't read from file %s\n", file_from);
 		exit(98);
