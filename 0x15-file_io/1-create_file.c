@@ -3,7 +3,7 @@
 /**
  * create_file - a function that creates a file with the permission rw-------.
  * @filename: the name of the file to create
- * @text_context: the string to add
+ * @text_content: the string to add
  * Return: 1 or -1
  */
 
