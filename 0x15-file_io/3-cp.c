@@ -24,7 +24,7 @@ void copy_file(const char *file_from, const char *file_to)
 		fprintf(stderr, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
-	buffer = malloc(sizeof(char) * 1024);
+	buffer = malloc(sizeof(char) * (1024 * 2));
 	if (buffer == NULL)
 		exit(1);
 	nchar = read(fd_from, buffer, 1024);
@@ -44,7 +44,7 @@ void copy_file_to(const char *file_to, char *buffer, int nchar)
 	int fd_to;
 	int wrt, cls;
 
-	fd_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0644);
+	fd_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd_to == -1)
 	{
 		fprintf(stderr, "Error: Can't write to %s\n", file_to);
