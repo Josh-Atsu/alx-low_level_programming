@@ -28,6 +28,11 @@ void copy_file(const char *file_from, const char *file_to)
 	if (buffer == NULL)
 		exit(98);
 	nchar = read(fd_from, buffer, 2048);
+	if (fd_from == -1)
+	{
+		fprintf(stderr, "Error: Can't read from file %s\n", file_from);
+		exit(98);
+	}
 	close(fd_from);
 	copy_file_to(file_to, buffer, nchar);
 	free(buffer);
