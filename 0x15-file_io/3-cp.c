@@ -15,13 +15,13 @@ void copy_file(const char *file_from, const char *file_to)
 
 	if (file_from == NULL)
 	{
-		fprintf(stderr, "Error: Can't read from file %s\n", file_from);
+		dprintf(stderr, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
 	fd_from = open(file_from, O_RDONLY);
 	if (fd_from == -1)
 	{
-		fprintf(stderr, "Error: Can't read from file %s\n", file_from);
+		dprintf(stderr, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
 	buffer = malloc(sizeof(char) * (1024 * 3));
@@ -30,7 +30,7 @@ void copy_file(const char *file_from, const char *file_to)
 	nchar = read(fd_from, buffer, 2048);
 	if (nchar == -1)
 	{
-		fprintf(stderr, "Error: Can't read from file %s\n", file_from);
+		dprintf(stderr, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
 	close(fd_from);
@@ -52,19 +52,19 @@ void copy_file_to(const char *file_to, char *buffer, int nchar)
 	fd_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd_to == -1)
 	{
-		fprintf(stderr, "Error: Can't write to %s\n", file_to);
+		dprintf(stderr, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
 	wrt = write(fd_to, buffer, nchar);
 	if (wrt == -1)
 	{
-		fprintf(stderr, "Error: Can't write to %s\n", file_to);
+		dprintf(stderr, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
 	cls = close(fd_to);
 	if (cls == -1)
 	{
-		fprintf(stderr, "Error: Can't close fd %d\n", fd_to);
+		dprintf(stderr, "Error: Can't close fd %d\n", fd_to);
 		exit(100);
 	}
 }
@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
 {
 	if (argc != 3)
 	{
-		printf("Usage: cp file_from file_to\n");
+		dprintf("Usage: cp file_from file_to\n");
 			exit(97);
 	}
 	copy_file(argv[1], argv[2]);
