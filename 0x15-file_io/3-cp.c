@@ -24,10 +24,10 @@ void copy_file(const char *file_from, const char *file_to)
 		dprintf(2, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
-	buffer = malloc(sizeof(char) * (1024 * 4));
+	buffer = malloc(sizeof(char) * (1024 * 3));
 	if (buffer == NULL)
 		exit(98);
-	nchar = read(fd_from, buffer, 2048);
+	nchar = read(fd_from, buffer, 3072);
 	if (nchar == -1)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", file_from);
