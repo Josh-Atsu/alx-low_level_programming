@@ -15,7 +15,7 @@ void copy_file(const char *file_from, const char *file_to)
 
 	if (file_from == NULL)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", file_from);
+		dprintf(1, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
 	fd_from = open(file_from, O_RDONLY);
@@ -24,7 +24,7 @@ void copy_file(const char *file_from, const char *file_to)
 		dprintf(2, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
-	buffer = malloc(sizeof(char) * (1024 * 3));
+	buffer = malloc(sizeof(char) * (1024 * 4));
 	if (buffer == NULL)
 		exit(98);
 	nchar = read(fd_from, buffer, 2048);
