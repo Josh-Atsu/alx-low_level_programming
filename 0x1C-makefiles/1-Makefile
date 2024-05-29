@@ -1,0 +1,11 @@
+# rule --> all
+# executable --> school
+
+all : school
+
+CC := gcc
+
+SRC := main.c school.c
+
+school :
+	${CC} ${SRC} -o $@
