@@ -1,15 +1,9 @@
 # Usage
-# make 
-# clean
+# make
 
-.PHONY : all clean
-
-CC = gcc
+.PHONY : all
 
 all: school
 
 school:
-	${CC} main.c school.c -o school
-
-clean:
-	rm -rvf *.o
+	gcc main.c school.c -o school
