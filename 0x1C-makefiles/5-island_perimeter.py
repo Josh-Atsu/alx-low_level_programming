@@ -5,7 +5,26 @@
 def island_perimeter(grid):
     """returns the perimeter of the island described in grid
     grid: is a list of integers"""
-    #height = []
-    #width = []
-    perimeter = len(grid)
+    rows = len(grid)
+    cols = len(grid[0])
+    # Checking if grid is empty
+    if rows == 0:
+        return 0
+
+    perimeter = 0
+
+    # Traverse throught the grid
+    # check for neighbour cells or value
+    # if 0 increment perimeter
+    for i in range(rows):
+        for j in range(cols):
+            if grid[i][j] == 1:
+                if grid[i - 1][j] == 0:
+                    perimeter += 1
+                if grid[i + 1][j] == 0:
+                    perimeter += 1
+                if grid[i][j - 1] == 0:
+                    perimeter += 1
+                if grid[i][j + 1] == 0:
+                    perimeter += 1
     return perimeter
