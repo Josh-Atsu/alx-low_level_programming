@@ -34,7 +34,7 @@ int binary_search(int *array, size_t size, int value)
 			return (-1);
 		m = (L + R) / 2;
 		if (value < array[m])
-			R = m -1;
+			R = m - 1;
 		else if (value > array[m])
 			L = m + 1;
 		else if (value == array[m])
